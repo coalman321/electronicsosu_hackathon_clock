@@ -3,7 +3,7 @@ import colorsys
 import datetime
 import time
 
-#constant globals
+#constants
 NUMLEDS = 360
 DATAPIN = 10
 
@@ -27,9 +27,9 @@ VALUE = 175
 
 
 # NOTHING SHOULD NEED TO BE TOUCHED BELOW THIS LINE
-# should only be 0 or 1 in the arrays
 # maps characters to segments
 CHARDICT = {
+    #SHOULD ONLY BE 1 OR 0 INSIDE ARRAYS
     '\0' : [0, 0, 0, 0, 0, 0, 0],
     0 : [1, 1, 1, 1, 1, 1, 0],
     1 : [0, 0, 0, 1, 1, 0, 0],
@@ -52,13 +52,14 @@ SEGLENGTH = [11, 11, 12, 11, 11, 12, 12]
 
 DOTSIZE = [4,4] # the colon dot is a 4x4 matrix in a chain
 
+#starting indicies for each character
 CHAR1OFFSET = 0
 CHAR2OFFSET = 82
 COLONOFFSET = 164
 CHAR3OFFSET = 196
 CHAR4OFFSET = 278
 
-#changing globals
+#globals
 endTime = datetime.datetime.now()
 lastTime = datetime.datetime.now()
 allowStart = False
@@ -156,7 +157,8 @@ def CountDown():
 
     #iterate the hue
     HueIterator = HueIterator + 1 if HueIterator < 360 else 0
-    #TODO implement a done
+    
+    #TODO show something when time runs out
 
 
 def HWDebug():
